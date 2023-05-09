@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #18186a;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Skid-Search</h1>
+  <input type="text" id="searchInput" placeholder="Enter code" />
+  <button id="searchButton">Search</button>
+
+  <script>
+    const searchButton = document.getElementById('searchButton');
+
+    searchButton.addEventListener('click', () => {
+      const searchQuery = document.getElementById('searchInput').value;
+      const searchUrl = `https://grep.app/search?q=${encodeURIComponent(searchQuery)}`;
+
+      window.open(searchUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
